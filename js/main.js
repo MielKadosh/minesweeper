@@ -8,7 +8,6 @@ const BOMB = '💣'
 const FLAG = '🚩'
 
 
-
 gGame = {
     isOn: false,
     shownCount: 0,
@@ -33,8 +32,8 @@ gLevel = {
 // This is called when page loads 
 function initGame() {
     const gBoard = createBoard()
-    renderBoard()
-
+    gBoard = buildBoard()
+    renderBoard(gBoard)
 }
 
 // Builds the board 
@@ -43,9 +42,9 @@ function initGame() {
 // Return the created board
 function createBoard() {
     const board = []
-    for(var i = 0; i < gLevel.SIZE; i++){
+    for (var i = 0; i < gLevel.SIZE; i++) {
         board[i] = []
-        for(var j = 0; j < gLevel.SIZE; j++){
+        for (var j = 0; j < gLevel.SIZE; j++) {
             board[i][j] = createCell()
         }
     }
@@ -66,19 +65,23 @@ function createCell() {
 
 
 function renderBoard(board) {
-    var strHTML = ''
-    for (var i = 0; i < board.length; i++) {
+    var strHTML = '<table><tbody>'
+    for (var i = 0; i < gLevel.SIZE; i++) {
         strHTML += '<tr>'
-        for (var j = 0; j < board[0].length; j++) {
+        for (var j = 0; j < gLevel.SIZE; j++) {
             const cell = board[i][j]
-            strHTML += `<td data-i="${i}" data-j="${j}" onclick="onCellClicked(this, ${i}, ${j})" class="${className} ">${cell}</td>`
+            var className = getClassName({i, j})
+            className += 'board-cell'
+            strHTML += `<td class="${className}"  onclick="cellClicked(this, ${i}, ${j})" oncontextmenu="cellMarked(this)" >${str}</td>`
         }
         strHTML += '</tr>'
 
     }
-    const elBoard = document.querySelector('tbody.board')
+    strHTML += '</tbody></table>'
+    const elBoard = document.querySelector('.game')
     elBoard.innerHTML = strHTML
 }
+
 
 
 
