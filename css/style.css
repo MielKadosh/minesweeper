@@ -154,8 +154,8 @@ th {
 }
 
 .grid div {
-	width: 70px;
-	height: 70px;
+	width: 20px;
+	height: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
