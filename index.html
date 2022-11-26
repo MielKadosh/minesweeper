@@ -8,19 +8,35 @@
     <title>minesweeper game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body onload="initGame()">
     <div class="container">
+        <div>
+            <button class="level" onclick="levelEasy()">Easy</button>
+            <button class="level" onclick="levelMedium()">Medium</button>
+            <button class="level" onclick="levelHard()">Hard</button>
+        </div>
+        <div class="lives"></div>
         <h1 class="title">Minesweeper</h1>
         <div class="top">
-          <div class="flag-box"><h1>0<span id="flags-left"></span></h1></div>
-          <button class="emoji-btn"><h1>🙂</h1></button>
-          <div class="timer-box"><h1><span id="timer">0</span></h1></div>
+            <div class="flag-box">
+                <h1>0<span id="flags-left"></span></h1>
+            </div>
+            <button class="emoji-btn">
+                <h1>🙂</h1>
+            </button>
+            <div class="timer-box">
+                <h1><span id="timer">0</span></h1>
+            </div>
         </div>
         <div class="grid"></div>
         <div id="result"></div>
-        <div class="game"></div>
-    <script src="js/util.js"></script>
-    <script src="js/main.js"></script>
+    </div>
+    <table>
+        <tbody class="board">
+        </tbody>
+        <script src="js/util.js"></script>
+        <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -24,11 +24,11 @@ function shuffle(items) {
     return items;
 }
 
-numbers.sort( function( a , b){
-    if(a > b) return 1;
-    if(a < b) return -1;
-    return 0;
-});
+// numbers.sort( function( a , b){
+//     if(a > b) return 1;
+//     if(a < b) return -1;
+//     return 0;
+// });
 
 function getTime() {
     return new Date().toString().split(' ')[4];
@@ -121,6 +121,6 @@ function onHandleKey(event) {
             moveTo(i + 1, j)
             break
     }
-    
+
 
 }
