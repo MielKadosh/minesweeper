@@ -75,7 +75,6 @@ window.addEventListener('contextmenu', function (ev) {
     if (!i || !j) {
         return
     }
-    debugger
     const cell = gBoard[i][j]
     if (!cell.isMarked && flags === 0) {
         return
@@ -240,7 +239,6 @@ function checkWin() {
     for (var i = 0; i < gLevel.SIZE; i++) {
         for (var j = 0; j < gLevel.SIZE; j++) {
             const cell = gBoard[i][j]
-            debugger
             if (!cell.isShown && !cell.isMarked) {
                 return
             }
